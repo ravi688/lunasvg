@@ -28,16 +28,8 @@
 #include <string>
 #include <vector>
 
-#if !defined(LUNASVG_BUILD_STATIC) && (defined(_WIN32) || defined(__CYGWIN__))
-#define LUNASVG_EXPORT __declspec(dllexport)
-#define LUNASVG_IMPORT __declspec(dllimport)
-#elif defined(__GNUC__) && (__GNUC__ >= 4)
-#define LUNASVG_EXPORT __attribute__((__visibility__("default")))
-#define LUNASVG_IMPORT
-#else
 #define LUNASVG_EXPORT
 #define LUNASVG_IMPORT
-#endif
 
 #ifdef LUNASVG_BUILD
 #define LUNASVG_API LUNASVG_EXPORT
